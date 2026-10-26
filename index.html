@@ -6,8 +6,8 @@
 <meta name="theme-color" content="#174A31">
 <title>Агробот ТАУ</title>
 <meta name="description" content="Агробот ТАУ — определение болезней растений по фото. ТАУ им. Ш. Шотемур.">
-<link rel="icon" href="img/tau-logo.png">
-<link rel="apple-touch-icon" href="img/tau-logo.png">
+<link rel="icon" href="tau-logo.png">
+<link rel="apple-touch-icon" href="tau-logo.png">
 <link rel="manifest" href="manifest.webmanifest">
 <style>[hidden]{display:none!important}body{margin:0}img{max-width:100%}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 </head>
@@ -386,7 +386,7 @@ button { font: inherit; color: inherit; }
     <div class="glow"></div>
     <div class="inner">
       <div class="topbar">
-        <div class="brand"><img src="img/tau-logo.png" width="40" height="40" alt="ТАУ им. Ш. Шотемур"><div style="min-width:0"><b>Агробот ТАУ</b><small data-t="sub"></small></div></div>
+        <div class="brand"><img src="tau-logo.png" width="40" height="40" alt="ТАУ им. Ш. Шотемур"><div style="min-width:0"><b>Агробот ТАУ</b><small data-t="sub"></small></div></div>
         <div class="lang" role="group" aria-label="Забон / Язык"><button type="button" data-lang="tj">ТҶ</button><button type="button" data-lang="ru">РУ</button></div>
       </div>
       <div>
@@ -442,7 +442,7 @@ button { font: inherit; color: inherit; }
       <div class="rail" id="samples"></div>
     </section>
 
-    <div class="credit"><img src="img/tau-95.png" width="38" height="38" alt=""><span data-t="foot1"></span></div>
+    <div class="credit"><img src="tau-95.png" width="38" height="38" alt=""><span data-t="foot1"></span></div>
   </div>
 </section>
 
@@ -585,7 +585,7 @@ button { font: inherit; color: inherit; }
 <section id="v-about" hidden>
   <div class="inner"><div class="page-head"><h1 data-t="aboutTitle"></h1><div class="lang" role="group" aria-label="Забон / Язык"><button type="button" data-lang="tj">ТҶ</button><button type="button" data-lang="ru">РУ</button></div></div></div>
   <div class="inner page stagger">
-    <div class="about-hero"><img src="img/tau-95.png" width="92" height="92" alt="95 лет ТАУ"><div><b data-t="aboutH"></b><span data-t="aboutSub"></span></div></div>
+    <div class="about-hero"><img src="tau-95.png" width="92" height="92" alt="95 лет ТАУ"><div><b data-t="aboutH"></b><span data-t="aboutSub"></span></div></div>
     <div class="prose"><p data-t="about1"></p><p data-t="about2"></p></div>
     <section>
       <div class="sec-title"><h2 data-t="stagesT"></h2></div>
@@ -597,7 +597,7 @@ button { font: inherit; color: inherit; }
       </ol>
     </section>
     <p class="note" data-t="disclaimer"></p>
-    <div class="credit"><img src="img/tau-logo.png" width="38" height="38" alt=""><span data-t="foot1"></span></div>
+    <div class="credit"><img src="tau-logo.png" width="38" height="38" alt=""><span data-t="foot1"></span></div>
   </div>
 </section>
 
@@ -997,7 +997,7 @@ function setStatus(k) {
 function loadModel() {
   if (!window.tf) { setStatus("failed"); return Promise.resolve(null); }
   setStatus("loading");
-  modelPromise = tf.loadLayersModel(new URL("model/model.json", location.href).href).then((m) => {
+  modelPromise = tf.loadLayersModel(new URL("model.json", location.href).href).then((m) => {
     model = m;
     sub = tf.model({ inputs: m.inputs, outputs: [m.getLayer("global_average_pooling2d").output, m.output] });
     tf.tidy(() => { sub.predict(tf.zeros([1, 224, 224, 3])); });
