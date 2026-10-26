@@ -1,0 +1,1 @@
+{"name": "Агробот ТАУ", "short_name": "Агробот", "start_url": "./", "display": "standalone", "background_color": "#F4F5F0", "theme_color": "#174A31", "icons": [{"src": "img/tau-logo.png", "sizes": "160x160", "type": "image/png"}]}

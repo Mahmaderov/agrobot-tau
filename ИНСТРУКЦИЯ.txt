@@ -1,0 +1,47 @@
+АГРОБОТ ТАУ на Netlify — заявки с фото в группу агрономов одной кнопкой
+=======================================================================
+
+В папке
+  index.html, model/, img/, manifest.webmanifest — приложение
+  netlify/functions/send.mts — «почтальон»: отправляет заявку и фото в Telegram
+  netlify.toml — настройки для Netlify
+
+ВАЖНО. Обычное перетаскивание папки в Netlify (как с календарём) публикует
+только страницу, а «почтальон» при этом не запускается. Поэтому сайт
+подключается через GitHub — это тоже без программирования, всё в браузере.
+
+ШАГ 1. Номер группы агрономов (CHAT_ID)
+  1. Добавьте в группу бота @RawDataBot.
+  2. В его ответе найдите "chat": { "id": -100XXXXXXXXXX — это CHAT_ID (с минусом).
+  3. Удалите @RawDataBot из группы.
+
+ШАГ 2. Загрузить папку на GitHub
+  1. Зайдите на github.com (зарегистрируйтесь, если нужно) → «New repository».
+     Имя: agrobot-tau. Тип: Public или Private — любой. «Create repository».
+  2. На странице репозитория: «uploading an existing file».
+  3. Перетащите В ОКНО ВСЁ СОДЕРЖИМОЕ папки agrobot-tau (не саму папку):
+     index.html, manifest.webmanifest, netlify.toml, папки model, img, netlify.
+  4. Внизу «Commit changes».
+
+ШАГ 3. Подключить к Netlify
+  1. app.netlify.com → «Add new project» → «Import an existing project» → GitHub.
+  2. Разрешите доступ и выберите репозиторий agrobot-tau.
+  3. Ничего не меняйте в настройках сборки → «Deploy».
+  4. Project configuration → Environment variables → «Add a variable»:
+       BOT_TOKEN = токен бота от @BotFather
+       CHAT_ID   = число из шага 1
+     Токен хранится только в Netlify и в приложение не попадает.
+  5. Deploys → «Trigger deploy» → «Deploy project», чтобы переменные вступили в силу.
+  6. Domain management → можно сменить адрес на agrobot-tau.netlify.app
+     или подключить домен университета.
+
+ШАГ 4. Проверка
+  Откройте сайт с телефона → «Агроном» → заполните заявку, добавьте фото →
+  «Отправить заявку». Должно появиться «Заявка отправлена агрономам»,
+  а в группе — сообщение с данными и фото под ним.
+
+Если не работает
+  • Пишет «Не удалось отправить» — проверьте переменные BOT_TOKEN и CHAT_ID
+    и что после их добавления был сделан новый Deploy.
+  • Проверьте, что бот @tau_agro_bot состоит в группе.
+  • Netlify → Logs → Functions → send — там видно ошибку.
