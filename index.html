@@ -3281,7 +3281,7 @@ Object.assign(T.ru, {
   dcLimE: "энергия — добавьте зерно или хороший силос", dcLimP: "протеин — добавьте жмых, шрот или люцерну", dcLimOk: "энергия и протеин сбалансированы",
   dcRough: "Грубых кормов меньше 40% сухого вещества — риск ацидоза, падения жира молока и болезней копыт.",
   dcOver: "Корова не съест столько: аппетит около {a} кг сухого вещества, а в рационе {t} кг.",
-  dcCostL: "Корм на 1 кг молока", dcLimit: "Что ограничивает удой",
+  dcCostL: "Корм на 1 кг молока", dcBad: "Проверьте данные коровы: вес 250–900 кг, удой 0–60 кг, жир 2–7%, белок 2,5–5%, дней после отёла 0–500.", dcLimit: "Что ограничивает удой",
   dcTips: "Первые 3 недели после отёла корова ест меньше, чем нужно, и худеет — это нормально, но потеря больше 1 балла упитанности опасна (кетоз). Концентраты повышайте постепенно, не больше 0,5 кг в сутки.",
   dcMethod: "Расчёт по уравнениям NRC (США) для молочного скота: аппетит, энергия NEL, обменный протеин, Ca и P. Стельность в последние 2 месяца и пастьба требуют больше энергии. Это предварительная версия — нормы проверят зоотехники ТАУ.",
   /* heifer */
@@ -3289,13 +3289,13 @@ Object.assign(T.ru, {
   hfTarget: "Норма в этом возрасте", hfOf: "от нормы", hfOk: "Растёт по норме", hfLow: "Отстаёт в росте", hfHigh: "Растёт быстрее нормы",
   hfLowTip: "Отставание задерживает случку и первый отёл, а каждый лишний месяц до отёла — это затраты без молока. Добавьте энергии и протеина, проверьте на глистов.",
   hfHighTip: "До 10 месяцев очень быстрый рост (больше {g} г в сутки) откладывает жир в вымени — молока потом будет меньше. Ограничьте концентраты.",
-  hfOkTip: "Держите такой привес до случки.", hfTooFast: "Догонять так быстро до 10 месяцев нельзя — жир отложится в вымени. Лучше держать около {g} г в сутки (не больше {h}) и сдвинуть случку на 1–2 месяца.", hfNeed: "Нужный привес до следующей цели", hfGday: "г/сутки",
+  hfOkTip: "Держите такой привес до случки.", hfBadAge: "Возраст — в месяцах, от 0 до 30.", hfBadWt: "Вес — в килограммах (например 180).", hfTooFast: "Догонять так быстро до 10 месяцев нельзя — жир отложится в вымени. Лучше держать около {g} г в сутки (не больше {h}) и сдвинуть случку на 1–2 месяца.", hfNeed: "Нужный привес до следующей цели", hfGday: "г/сутки",
   hfMiles: "Цели для породы", hfM1: "Рождение", hfM2: "2 месяца — вес удвоился", hfM3: "Случка (13–15 мес.) — 55% веса взрослой коровы", hfM4: "После первого отёла (22–24 мес.) — 85%",
   hfMature: "Вес взрослой коровы ≈ {w} кг",
   hfBreeds: { hol: "Голштинская, чёрно-пёстрая", sim: "Симментальская", swiss: "Швицкая (бурая)", red: "Красная степная", jer: "Джерсейская", loc: "Местная или помесь" },
   tpTitle: "Вес по обхвату груди", tpGirth: "Обхват груди, см", tpLen: "Косая длина туловища, см",
   tpHow: "Обхват — лентой сразу за лопатками, лента плотно, но не туго. Длина — от плечевого бугра до седалищного бугра. Животное стоит ровно, голова прямо.",
-  tpRes: "Примерный вес", tpNote: "Точность ±5–10%. Для стельных и очень упитанных животных вес завышается.",
+  tpRes: "Примерный вес", tpBad: "Обхват — 60–260 см, длина — 50–220 см. Вводите в сантиметрах.", tpNote: "Точность ±5–10%. Для стельных и очень упитанных животных вес завышается.",
   bcTitle: "Упитанность коровы (баллы 1–5)",
   bc1: "1 — истощение: остистые отростки позвонков и рёбра резко видны, бугры острые, у хвоста глубокие ямы.",
   bc2: "2 — худая: отдельные рёбра видны, бугры выступают, ямы у корня хвоста заметны.",
@@ -3304,8 +3304,8 @@ Object.assign(T.ru, {
   bc5: "5 — ожирение: бугры не видны, спина плоская, жир свисает у хвоста. Риск трудных отёлов и кетоза.",
   bcAim: "Цели: при запуске и отёле — 3–3,5; на пике лактации — 2,5–3; не терять больше 1 балла после отёла.",
   /* broiler */
-  brFlock: "Партия бройлеров", brSex: "Птица", brAh: "Смешанная", brM: "Петушки", brF: "Курочки", brAge: "Возраст, дней", brWt: "Средний вес по взвешиванию, г",
-  brWtHint: "Взвесьте 50–100 птиц из разных мест птичника.", brPlaced: "Посажено цыплят, голов", brDead: "Пало и выбраковано, голов", brFeedUsed: "Скормлено корма с посадки, кг (если знаете)",
+  brFlock: "Партия бройлеров", brSex: "Птица", brAh: "Смешанная", brM: "Петушки", brF: "Курочки", brAge: "Возраст, дней", brWt: "Средний вес одной птицы",
+  brWtHint: "Взвесьте 50–100 птиц из разных мест птичника. Можно в граммах (2100) или в килограммах (2,1).", brKgNote: "введено в кг", brBadDead: "Пало больше, чем посажено, — проверьте числа.", brCheckWt: "Такой вес для этого возраста невозможен — проверьте возраст и вес.", brPlaced: "Посажено цыплят, голов", brDead: "Пало и выбраковано, голов", brFeedUsed: "Скормлено корма с посадки, кг (если знаете)",
   brMoney: "Цены", brPFeed: "Корм, сом./кг", brPMeat: "Живой вес, сом./кг", brPChick: "Цыплёнок, сом.",
   brNorm: "Норма Ross 308 на {d}-й день", brYour: "Ваш вес", brNWt: "Вес", brNGain: "Привес за сутки", brNFeed: "Корм на птицу в сутки", brNCum: "Корм с посадки",
   brOk: "В норме", brLag: "Немного отстают", brBad: "Сильно отстают", brAhead: "Опережают норму",
@@ -3345,20 +3345,20 @@ Object.assign(T.tj, {
   dcLimE: "энергия — дона ё силоси хуб илова кунед", dcLimP: "протеин — кунҷара, шрот ё юнучқа илова кунед", dcLimOk: "энергия ва протеин мувозинанд",
   dcRough: "Хӯроки дағал камтар аз 40% моддаи хушк — хатари ацидоз, кам шудани равғани шир ва бемории сум.",
   dcOver: "Гов ин қадар хӯрда наметавонад: иштиҳо тақрибан {a} кг моддаи хушк, дар рацион {t} кг.",
-  dcCostL: "Хӯрок ба 1 кг шир", dcLimit: "Чӣ ширдиҳиро маҳдуд мекунад",
+  dcCostL: "Хӯрок ба 1 кг шир", dcBad: "Маълумоти говро санҷед: вазн 250–900 кг, шир 0–60 кг, равған 2–7%, сафеда 2,5–5%, рӯзҳо баъди зоиш 0–500.", dcLimit: "Чӣ ширдиҳиро маҳдуд мекунад",
   dcTips: "Дар 3 ҳафтаи аввали баъди зоиш гов камтар аз зарурат мехӯрад ва лоғар мешавад — ин муқаррарист, аммо аз даст додани зиёда аз 1 бали фарбеҳӣ хатарнок аст (кетоз). Консентратҳоро тадриҷан, на зиёда аз 0,5 кг дар шабонарӯз, зиёд кунед.",
   dcMethod: "Ҳисоб аз рӯи муодилаҳои NRC (ИМА) барои чорвои ширдеҳ: иштиҳо, энергияи NEL, протеини мубодилавӣ, Ca ва P. Ҳомиладорӣ дар 2 моҳи охир ва чаронидан энергияи бештар талаб мекунад. Ин версияи пешакӣ аст — меъёрҳоро зоотехникони ДАТ месанҷанд.",
   hfTitle: "Калоншавии гӯсолаи модина", hfBreed: "Зот", hfAge: "Синну сол, моҳ", hfWt: "Вазни ҳозира, кг", hfNoScale: "Тарозу нест? Дар поён — ҳисоби вазн аз рӯи давраи сина.",
   hfTarget: "Меъёр дар ин синну сол", hfOf: "аз меъёр", hfOk: "Мувофиқи меъёр калон мешавад", hfLow: "Аз рушд мемонад", hfHigh: "Аз меъёр тезтар калон мешавад",
   hfLowTip: "Мондан аз рушд ҷуфтгириро ва зоиши аввалро ба таъхир мегузорад, ва ҳар моҳи иловагӣ то зоиш — хароҷот бе шир аст. Энергия ва протеин илова кунед, барои кирмҳо санҷед.",
   hfHighTip: "То 10-моҳагӣ калоншавии хеле тез (зиёда аз {g} г дар шабонарӯз) дар пистон равған ҷамъ мекунад — баъдтар шир камтар мешавад. Консентратҳоро маҳдуд кунед.",
-  hfOkTip: "Чунин афзоишро то ҷуфтгирӣ нигоҳ доред.", hfTooFast: "То 10-моҳагӣ ин қадар тез расидан мумкин нест — дар пистон равған ҷамъ мешавад. Беҳтар тақрибан {g} г дар шабонарӯз (на зиёда аз {h}) нигоҳ доред ва ҷуфтгириро 1–2 моҳ ба таъхир гузоред.", hfNeed: "Афзоиши лозимӣ то ҳадафи навбатӣ", hfGday: "г/шабонарӯз",
+  hfOkTip: "Чунин афзоишро то ҷуфтгирӣ нигоҳ доред.", hfBadAge: "Синну сол — бо моҳ, аз 0 то 30.", hfBadWt: "Вазн — бо кило (масалан 180).", hfTooFast: "То 10-моҳагӣ ин қадар тез расидан мумкин нест — дар пистон равған ҷамъ мешавад. Беҳтар тақрибан {g} г дар шабонарӯз (на зиёда аз {h}) нигоҳ доред ва ҷуфтгириро 1–2 моҳ ба таъхир гузоред.", hfNeed: "Афзоиши лозимӣ то ҳадафи навбатӣ", hfGday: "г/шабонарӯз",
   hfMiles: "Ҳадафҳо барои зот", hfM1: "Таваллуд", hfM2: "2 моҳ — вазн ду баробар шуд", hfM3: "Ҷуфтгирӣ (13–15 моҳ) — 55% вазни гови калон", hfM4: "Баъди зоиши аввал (22–24 моҳ) — 85%",
   hfMature: "Вазни гови калон ≈ {w} кг",
   hfBreeds: { hol: "Голштинӣ, сиёҳу ало", sim: "Симменталӣ", swiss: "Швитсӣ (қаҳваранг)", red: "Сурхи даштӣ", jer: "Ҷерсейӣ", loc: "Маҳаллӣ ё дурага" },
   tpTitle: "Вазн аз рӯи давраи сина", tpGirth: "Давраи сина, см", tpLen: "Дарозии моили тан, см",
   tpHow: "Давра — бо тасма дарҳол паси бозуҳо, тасма зич, вале на сахт. Дарозӣ — аз барҷастагии китф то барҷастагии нишастгоҳ. Ҳайвон рост меистад, сар рост.",
-  tpRes: "Вазни тахминӣ", tpNote: "Дақиқӣ ±5–10%. Барои ҳайвонҳои ҳомила ва хеле фарбеҳ вазн зиёдтар нишон дода мешавад.",
+  tpRes: "Вазни тахминӣ", tpBad: "Давра — 60–260 см, дарозӣ — 50–220 см. Бо сантиметр ворид кунед.", tpNote: "Дақиқӣ ±5–10%. Барои ҳайвонҳои ҳомила ва хеле фарбеҳ вазн зиёдтар нишон дода мешавад.",
   bcTitle: "Фарбеҳии гов (балл 1–5)",
   bc1: "1 — хастагӣ: устухонҳои пушт ва қабурғаҳо равшан намоёнанд, барҷастагиҳо тез, назди дум чуқуриҳои калон.",
   bc2: "2 — лоғар: баъзе қабурғаҳо намоёнанд, барҷастагиҳо мебароянд, чуқурии назди дум маълум.",
@@ -3366,8 +3366,8 @@ Object.assign(T.tj, {
   bc4: "4 — фарбеҳ: қабурғаҳо ламс намешаванд, назди дум қатҳои равған.",
   bc5: "5 — фарбеҳии аз ҳад зиёд: барҷастагиҳо намоён нестанд, пушт ҳамвор, равған назди дум овезон. Хатари зоиши душвор ва кетоз.",
   bcAim: "Ҳадафҳо: ҳангоми хушккунӣ ва зоиш — 3–3,5; дар авҷи лактатсия — 2,5–3; баъди зоиш на зиёда аз 1 балл гум накунед.",
-  brFlock: "Партияи бройлер", brSex: "Парранда", brAh: "Омехта", brM: "Хурӯсчаҳо", brF: "Мурғчаҳо", brAge: "Синну сол, рӯз", brWt: "Вазни миёна аз баркашӣ, г",
-  brWtHint: "50–100 паррандаро аз ҷойҳои гуногуни паррандахона баркашед.", brPlaced: "Ҷӯҷаҳои шинондашуда, сар", brDead: "Талафшуда ва баровардашуда, сар", brFeedUsed: "Хӯроки додашуда аз шинондан, кг (агар донед)",
+  brFlock: "Партияи бройлер", brSex: "Парранда", brAh: "Омехта", brM: "Хурӯсчаҳо", brF: "Мурғчаҳо", brAge: "Синну сол, рӯз", brWt: "Вазни миёнаи як парранда",
+  brWtHint: "50–100 паррандаро аз ҷойҳои гуногуни паррандахона баркашед. Бо грамм (2100) ё кило (2,1) мумкин аст.", brKgNote: "бо кг ворид шуд", brBadDead: "Талафот аз шумораи шинондашуда зиёд аст — рақамҳоро санҷед.", brCheckWt: "Чунин вазн барои ин синну сол имконнопазир аст — синну сол ва вазнро санҷед.", brPlaced: "Ҷӯҷаҳои шинондашуда, сар", brDead: "Талафшуда ва баровардашуда, сар", brFeedUsed: "Хӯроки додашуда аз шинондан, кг (агар донед)",
   brMoney: "Нархҳо", brPFeed: "Хӯрок, сом./кг", brPMeat: "Вазни зинда, сом./кг", brPChick: "Ҷӯҷа, сом.",
   brNorm: "Меъёри Ross 308 дар рӯзи {d}", brYour: "Вазни шумо", brNWt: "Вазн", brNGain: "Афзоиш дар шабонарӯз", brNFeed: "Хӯрок ба як парранда дар шабонарӯз", brNCum: "Хӯрок аз шинондан",
   brOk: "Мувофиқи меъёр", brLag: "Каме ақиб мемонанд", brBad: "Хеле ақиб мемонанд", brAhead: "Аз меъёр пеш мегузаранд",
@@ -3485,8 +3485,9 @@ function renderDairy() {
 }
 function renderDairyRes() {
   const t = T[lang], box = $("dc-res"); if (!box) return;
-  const c = { bw: num(dc.bw), milk: num(dc.milk), fat: num(dc.fat), prot: num(dc.prot), dim: num(dc.dim), par: dc.par };
-  if (!(c.bw >= 250 && c.bw <= 900) || !(c.milk >= 0 && c.milk <= 60) || !(c.fat > 1.5 && c.fat < 8) || !(c.prot > 2 && c.prot < 6) || !(c.dim >= 0)) { box.innerHTML = ""; return; }
+  const pct = (v) => (v >= 15 && v < 80 ? v / 10 : v);   // 38 typed instead of 3,8
+  const c = { bw: num(dc.bw), milk: num(dc.milk), fat: pct(num(dc.fat)), prot: pct(num(dc.prot)), dim: num(dc.dim) || 0, par: dc.par };
+  if (!(c.bw >= 250 && c.bw <= 900) || !(c.milk >= 0 && c.milk <= 60) || !(c.fat >= 2 && c.fat <= 7) || !(c.prot >= 2.5 && c.prot <= 5) || !(c.dim >= 0 && c.dim <= 500)) { box.innerHTML = `<div class="card fdwarn">${esc(t.dcBad)}</div>`; return; }
   const feeds = FEEDS.filter((f) => dc.on[f.id]).map((f) => ({ ...f, price: Math.max(0, num(fd.price[f.id]) || 0) }));
   if (!feeds.some((f) => f.kind === "R") || !feeds.some((f) => f.kind === "C")) { box.innerHTML = `<div class="card fdwarn">${esc(t.dcNoFeeds)}</div>`; return; }
   if (dc.mode === "best") {
@@ -3551,7 +3552,9 @@ function renderHeiferRes() {
   const t = T[lang], mw = HF_MW[hf.breed] || 650, age = num(hf.age), wt = num(hf.wt), box = $("hf-res"); if (!box) return;
   const b = 0.065 * mw, miles = [[0, t.hfM1, b], [2, t.hfM2, 2 * b], [14, t.hfM3, 0.55 * mw], [24, t.hfM4, 0.85 * mw]];
   let html = "";
-  if (age >= 0 && age <= 30) {
+  if (String(hf.age).trim() !== "" && !(age >= 0 && age <= 30)) html += `<div class="card fdwarn">${esc(t.hfBadAge)}</div>`;
+  else if (wt > 0 && wt < 20) html += `<div class="card fdwarn">${esc(t.hfBadWt)}</div>`;
+  if (age >= 0 && age <= 30 && !(wt > 0 && wt < 20)) {
     const tg = hfTarget(mw, age);
     html += `<div class="card fdcard"><div class="fdkpi"><div><small>${esc(t.hfTarget)}</small><b>${r0(tg)} ${esc(t.fdKgU)}</b></div>${wt > 0 ? `<div><small>${esc(t.hfWt)}</small><b>${r0(wt)} ${esc(t.fdKgU)} · ${r0(wt / tg * 100)}%</b></div>` : ""}</div>`;
     if (wt > 0) {
@@ -3566,9 +3569,11 @@ function renderHeiferRes() {
   }
   html += `<div class="card fdcard"><h3>${esc(t.hfMiles)}</h3><p class="fdnote">${esc(tpl(t.hfMature, { w: mw }))}</p><div class="fdtab">${miles.map((m) => `<div><span>${esc(m[1])}</span><b>${r0(m[2])} ${esc(t.fdKgU)}</b></div>`).join("")}</div></div>`;
   box.innerHTML = html;
-  const g = num(hf.girth), l = num(hf.len), tb = $("tp-res");
+  const cm = (v) => (v > 0 && v < 3 ? v * 100 : v);   // 1,5 typed in metres
+  const g = cm(num(hf.girth)), l = cm(num(hf.len)), tb = $("tp-res"), any = String(hf.girth).trim() !== "" && String(hf.len).trim() !== "";
   tb.innerHTML = g >= 60 && g <= 260 && l >= 50 && l <= 220
-    ? `<div class="fdpred"><small>${esc(t.tpRes)}</small><div class="big">${r0(g * g * l / 10840)} <span>${esc(t.fdKgU)}</span></div><p class="fdnote">${esc(t.tpNote)}</p></div>` : "";
+    ? `<div class="fdpred"><small>${esc(t.tpRes)}</small><div class="big">${r0(g * g * l / 10840)} <span>${esc(t.fdKgU)}</span></div><p class="fdnote">${esc(t.tpNote)}</p></div>`
+    : any ? `<p class="fdnote warnc">${esc(t.tpBad)}</p>` : "";
 }
 
 /* ---------- broilers (Ross 308) ---------- */
@@ -3583,7 +3588,7 @@ function renderBroiler() {
   const t = T[lang];
   $("fm-other").innerHTML = `<div class="card fdform"><h3>${esc(t.brFlock)}</h3>
       ${segBtns("bsex", br.sex, [["ah", t.brAh], ["m", t.brM], ["f", t.brF]])}
-      <div class="fdgrid2">${fld("br-age", t.brAge, br.age, 'min="0" max="56" step="1"')}${fld("br-wt", t.brWt, br.wt, 'min="30" max="6000" step="10" placeholder="—"')}</div>
+      <div class="fdgrid2">${fld("br-age", t.brAge, br.age, 'min="0" max="56" step="1"')}${fld("br-wt", t.brWt, br.wt, 'min="0" max="6000" step="any" placeholder="—"')}</div>
       <small class="fdsoon">${esc(t.brWtHint)}</small>
       <div class="fdgrid2">${fld("br-placed", t.brPlaced, br.placed, 'min="1" step="100"')}${fld("br-dead", t.brDead, br.dead, 'min="0" step="1" placeholder="0"')}</div>
       ${fld("br-feed", t.brFeedUsed, br.feedUsed, 'min="0" step="10" placeholder="—"')}</div>
@@ -3600,25 +3605,27 @@ function renderBroiler() {
 }
 function renderBroilerRes() {
   const t = T[lang], box = $("br-res"); if (!box) return;
-  const s = br.sex, age = Math.round(num(br.age)), wt = num(br.wt), placed = num(br.placed), dead = num(br.dead) || 0, used = num(br.feedUsed);
-  const pF = num(br.pFeed) || 0, pM = num(br.pMeat) || 0, BW = ROSS.bw[s], DI = ROSS.di[s], CI = ROSS.ci[s];
+  const s = br.sex, age = Math.round(num(br.age)), wt = brWt(), placed = num(br.placed), dead = num(br.dead) || 0, used = num(br.feedUsed);
+  const pF = Math.max(0, num(br.pFeed) || 0), pM = Math.max(0, num(br.pMeat) || 0), BW = ROSS.bw[s], DI = ROSS.di[s], CI = ROSS.ci[s];
   let html = "";
   if (!(age >= 0 && age <= 56)) { box.innerHTML = `<div class="card"><p class="fdnote">${esc(t.brEnter)}</p></div>`; renderBroilerHouse(null); renderBroilerCal(); return; }
-  const live = placed > 0 ? Math.max(0, placed - dead) : NaN, liv = placed > 0 ? live / placed : 1, ratio = wt > 0 ? wt / BW[age] : NaN;
+  if (placed > 0 && dead >= placed) html += `<div class="card fdwarn">${esc(t.brBadDead)}</div>`;
+  const live = placed > 0 ? Math.max(0, placed - Math.max(0, dead)) : NaN, liv = placed > 0 ? live / placed : 1, ratio = wt > 0 ? wt / BW[age] : NaN;
   /* norm vs flock */
   html += `<div class="card fdcard"><h3>${esc(tpl(t.brNorm, { d: age }))}</h3><div class="fdkpi">
       <div><small>${esc(t.brNWt)}</small><b>${r0(BW[age])} ${esc(t.fdG)}</b></div><div><small>${esc(t.brNGain)}</small><b>${age ? r0(BW[age] - BW[age - 1]) + " " + t.fdG : "—"}</b></div>
       <div><small>${esc(t.brNFeed)}</small><b>${DI[age] ? r0(DI[age]) + " " + t.fdG : "—"}</b></div><div><small>${esc(t.brNCum)}</small><b>${CI[age] ? r0(CI[age]) + " " + t.fdG : "—"}</b></div></div>`;
   if (wt > 0) {
     const st = ratio < 0.9 ? ["low", t.brBad] : ratio < 0.97 ? ["mid", t.brLag] : ratio > 1.05 ? ["ok", t.brAhead] : ["ok", t.brOk];
-    html += `<div class="brst ${st[0]}"><b>${esc(t.brYour)}: ${r0(wt)} ${esc(t.fdG)} · ${r0(ratio * 100)}%</b><span>${esc(st[1])}</span></div>`;
-    if (ratio < 0.97) html += `<p class="fdnote">${esc(t.brLagTip)}</p>`;
+    if (ratio < 0.4 || ratio > 1.8) html += `<div class="brst low"><b>${esc(t.brYour)}: ${r0(wt)} ${esc(t.fdG)}</b><span>${esc(t.brCheckWt)}</span></div>`;
+    else html += `<div class="brst ${st[0]}"><b>${esc(t.brYour)}: ${r0(wt)} ${esc(t.fdG)} · ${r0(ratio * 100)}%</b><span>${esc(st[1])}${num(br.wt) < 20 ? " · " + esc(t.brKgNote) : ""}</span></div>`;
+    if (ratio < 0.97 && ratio >= 0.4) html += `<p class="fdnote">${esc(t.brLagTip)}</p>`;
   }
   if (age >= 5 && age <= 9) html += `<p class="fdnote">${esc(tpl(t.brD7, { w: BW[7] }))}</p>`;
   html += `</div>`;
   /* today for the flock + FCR */
   if (live > 0) {
-    const feedKg = (DI[age] || 0) * live / 1000 * (wt > 0 ? Math.min(1.15, Math.max(0.7, ratio)) : 1);
+    const feedKg = (DI[age] || 0) * live / 1000 * (wt > 0 && ratio >= 0.4 && ratio <= 1.8 ? Math.min(1.15, Math.max(0.7, ratio)) : 1);
     html += `<div class="card fdcard"><h3>${esc(t.brToday)}</h3><div class="fdkpi">
       <div><small>${esc(t.brTFeed)}</small><b>${r0(feedKg)} ${esc(t.fdKgU)}</b></div><div><small>${esc(t.brTWater)}</small><b>${r0(feedKg * 1.6)}–${r0(feedKg * 2)} ${esc(t.brLiters)}</b></div>
       <div><small>${esc(t.brAlive)}</small><b>${r0(live)}</b></div><div><small>${esc(t.brLiv)}</small><b>${r1(liv * 100)}%</b></div></div>`;
@@ -3629,7 +3636,7 @@ function renderBroilerRes() {
     }
     html += `</div>`;
     /* when to sell */
-    const r = wt > 0 ? Math.min(1.1, Math.max(0.6, ratio)) : 1;
+    const r = wt > 0 && ratio >= 0.4 && ratio <= 1.8 ? Math.min(1.1, Math.max(0.6, ratio)) : 1;
     const days = [35, 38, 42, 45, 49, 52, 56].filter((d) => d > age);
     if (days.length) {
       let prev = age;
@@ -3654,9 +3661,11 @@ function renderBroilerRes() {
   } else { renderBroilerHouse(null); renderBroilerCal(); }
   box.innerHTML = html;
 }
+/* Weight is asked in grams; a small number like 2,1 means the farmer typed kilograms. */
+const brWt = () => { const w = num(br.wt); return w > 0 && w < 20 ? w * 1000 : w; };
 function renderBroilerHouse(m) {
   const t = T[lang], el = $("br-house"); if (!el) return;
-  const area = num(br.area), dens = num(br.dens) || 33, age = Math.round(num(br.age)), wt = num(br.wt), live = Math.max(0, (num(br.placed) || 0) - (num(br.dead) || 0));
+  const area = num(br.area), dens = num(br.dens) || 33, age = Math.round(num(br.age)), wt = brWt(), live = Math.max(0, (num(br.placed) || 0) - (num(br.dead) || 0));
   if (!(area > 0)) { el.innerHTML = ""; return; }
   const wEnd = m ? m.w : ROSS.bw[br.sex][42] / 1000, out = [`<p class="fdnote"><b>${esc(tpl(t.brMaxBirds, { n: r0(area * dens / wEnd * 0.97), w: r2(wEnd) }))}</b></p>`];
   if (live > 0 && age >= 0 && age <= 56) {
